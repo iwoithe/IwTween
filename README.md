@@ -18,11 +18,14 @@ int main()
     while (isRunning) {
         // Calculate delta time here
 
+        // Increase the tween's alpha by delta time
         tween.addAlpha(deltaTime);
 
+        // Print current value of the tween using a different interpolation
         std::cout << tween.currentValue(iw::Tween<float>::easeInCubicInterp) << std::endl;
 
         if (tween.alpha() >= 1.0f)
+            // Tween finished
             isRunning = false;
     }
 
