@@ -48,7 +48,7 @@ For now look at documentation in [`iwtween.h`](./iwtween.h)
 
 ## Contributing
 
-I'll be updating this library as I need to for personal projects, however, contributions are very welcome!
+I will update this library as I need for personal projects, however, contributions are very welcome!
 
 ## License
 
