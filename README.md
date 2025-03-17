@@ -12,7 +12,6 @@ A minimal header-only C++ tween library
 int main()
 {
     // Create a tween between 0 and 100
-    // Alternatively call tween.setStart(0.0f) and tween.setEnd(100.0f)
     iw::Tween<float> tween{ 0.0f, 100.0f };
 
     bool isRunning = true;
@@ -21,9 +20,9 @@ int main()
 
         tween.addAlpha(deltaTime);
 
-        std::cout << tween.getCurrentValue(iw::Tween<float>::easeInCubicInterp) << std::endl;
+        std::cout << tween.currentValue(iw::Tween<float>::easeInCubicInterp) << std::endl;
 
-        if (tween.getAlpha() >= 1.0f)
+        if (tween.alpha() >= 1.0f)
             isRunning = false;
     }
 

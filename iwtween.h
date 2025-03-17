@@ -30,14 +30,14 @@ namespace iw
 
 		typedef T(*InterpFunc)(T, T, float);
 
-		T getCurrentValue()
+		T currentValue()
 		{
 			/* Return the current value of this tween using linear
 			   interpolation (the default interpolation) */
 			return at(m_alpha);
 		}
 
-		T getCurrentValue(Tween<T>::InterpFunc interpFunc = linearInterp)
+		T currentValue(Tween<T>::InterpFunc interpFunc = linearInterp)
 		{
 			// Return the current value of this tween
 			return at(m_alpha, interpFunc);
@@ -61,7 +61,7 @@ namespace iw
 			return interpFunc(m_start, m_end, alpha);
 		}
 
-		T getStart() const
+		T start() const
 		{
 			// Return the start value
 			return m_start;
@@ -73,7 +73,7 @@ namespace iw
 			m_start = start;
 		}
 
-		T getEnd() const
+		T end() const
 		{
 			// Return the end value
 			return m_end;
@@ -85,7 +85,7 @@ namespace iw
 			m_end = end;
 		}
 
-		float getAlpha() const
+		float alpha() const
 		{
 			// Return this tween's alpha value
 			return m_alpha;
