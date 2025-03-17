@@ -11,19 +11,19 @@ A minimal header-only C++ tween library
 
 int main()
 {
-    float alpha = 0.0f;
-
+    // Create a tween between 0 and 100
+    // Alternatively call tween.setStart(0.0f) and tween.setEnd(100.0f)
     iw::Tween<float> tween{ 0.0f, 100.0f };
 
     bool isRunning = true;
     while (isRunning) {
         // Calculate delta time here
 
-        alpha += deltaTime;
+        tween.addAlpha(deltaTime);
 
-        std::cout << tween.at(alpha, iw::Tween<float>::easeInCubicInterp) << std::endl;
+        std::cout << tween.getCurrentValue(iw::Tween<float>::easeInCubicInterp) << std::endl;
 
-        if (alpha >= 1.0f)
+        if (tween.getAlpha() >= 1.0f)
             isRunning = false;
     }
 
@@ -39,6 +39,10 @@ int main()
 - Doesn't run its own loop, use your existing app/game loop
 - Various interpolation methods
   - Feel free to contribute more as many interpolation methods are currently missing!
+
+## Documentation
+
+For now look at documentation in [`iwtween.h`](./iwtween.h)
 
 ## Contributing
 
